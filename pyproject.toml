@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "czech-devanagari"
+version = "0.1.0"
+description = "Rule-based transliteration from Czech to Devanagari"
+authors = [{name = "Your Name"}]
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+czech2dev = "czech_dev.cli:main"
