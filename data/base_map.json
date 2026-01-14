@@ -1,61 +1,48 @@
 {
-  /* VOWELS */
-  "a": "अ",
-  "á": "आ",
-  "e": "ए",
-  "é": "ऐ",
-  "i": "इ",
-  "í": "ई",
-  "y": "इ",
-  "ý": "ई",
-  "o": "ओ",
-  "ó": "ओ",
-  "u": "उ",
-  "ú": "ऊ",
-  "ů": "ऊ",
+  "vowels": {
+    "a": {"dev": "अ", "long": false},
+    "á": {"dev": "आ", "long": true},
+    "e": {"dev": "ए", "long": false},
+    "é": {"dev": "ऐ", "long": true},
+    "i": {"dev": "इ", "long": false},
+    "í": {"dev": "ई", "long": true},
+    "y": {"dev": "इ", "long": false},
+    "ý": {"dev": "ई", "long": true},
+    "o": {"dev": "ओ", "long": false},
+    "ó": {"dev": "ओ", "long": true},
+    "u": {"dev": "उ", "long": false},
+    "ú": {"dev": "ऊ", "long": true},
+    "ů": {"dev": "ऊ", "long": true}
+  },
 
-  /* STOPS */
-  "p": "प",
-  "b": "ब",
-  "t": "त",
-  "d": "द",
-  "k": "क",
-  "g": "ग",
+  "consonants": {
+    "p": {"dev": "प", "class": "stop"},
+    "b": {"dev": "ब", "class": "stop"},
+    "t": {"dev": "त", "class": "stop"},
+    "d": {"dev": "द", "class": "stop"},
+    "k": {"dev": "क", "class": "stop"},
+    "g": {"dev": "ग", "class": "stop"},
 
-  /* NASALS */
-  "m": "म",
-  "n": "न",
-  "ň": "ञ",
+    "m": {"dev": "म", "class": "nasal"},
+    "n": {"dev": "न", "class": "nasal"},
+    "ň": {"dev": "ञ", "class": "nasal"},
 
-  /* FRICATIVES */
-  "f": "फ",
-  "v": "व",
-  "s": "स",
-  "z": "ज़",
-  "š": "श",
-  "ž": "झ़",
-  "h": "ह",
+    "f": {"dev": "फ", "class": "fricative"},
+    "v": {"dev": "व", "class": "fricative"},
+    "s": {"dev": "स", "class": "fricative"},
+    "z": {"dev": "ज़", "class": "fricative"},
+    "š": {"dev": "श", "class": "fricative"},
+    "ž": {"dev": "झ़", "class": "fricative"},
+    "h": {"dev": "ह", "class": "fricative"},
+    "ch": {"dev": "ख", "class": "fricative"},
 
-  /* AFFRICATES */
-  "c": "त्स",
-  "č": "च",
-  "dž": "ज",
+    "c": {"dev": "त्स", "class": "affricate"},
+    "č": {"dev": "च", "class": "affricate"},
+    "dž": {"dev": "ज", "class": "affricate"},
 
-  /* DIGRAPH */
-  "ch": "ख",
-
-  /* LIQUIDS & GLIDES */
-  "r": "र",
-  "l": "ल",
-  "j": "य",
-
-  /* SPECIAL CZECH */
-  "ř": "ढ़",
-
-  /* PUNCTUATION & SPACE */
-  " ": " ",
-  ".": ".",
-  ",": ",",
-  "?": "?",
-  "!": "!"
+    "r": {"dev": "र", "class": "liquid"},
+    "l": {"dev": "ल", "class": "liquid"},
+    "j": {"dev": "य", "class": "glide"},
+    "ř": {"dev": "ढ़", "class": "special"}
+  }
 }
