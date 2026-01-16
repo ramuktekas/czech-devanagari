@@ -1,18 +1,24 @@
 {
   "vowels": {
-    "a": {"dev": "अ", "long": false},
-    "á": {"dev": "आ", "long": true},
-    "e": {"dev": "ए", "long": false},
-    "é": {"dev": "ऐ", "long": true},
-    "i": {"dev": "इ", "long": false},
-    "í": {"dev": "ई", "long": true},
-    "y": {"dev": "इ", "long": false},
-    "ý": {"dev": "ई", "long": true},
-    "o": {"dev": "ओ", "long": false},
-    "ó": {"dev": "ओ", "long": true},
-    "u": {"dev": "उ", "long": false},
-    "ú": {"dev": "ऊ", "long": true},
-    "ů": {"dev": "ऊ", "long": true}
+    "a":  {"dev": "अ", "long": false},
+    "á":  {"dev": "आ", "long": true},
+
+    "e":  {"dev": "ए", "long": false},
+    "ě":  {"dev": "ए", "long": false},
+    "é":  {"dev": "ऐ", "long": true},
+
+    "i":  {"dev": "इ", "long": false},
+    "í":  {"dev": "ई", "long": true},
+
+    "y":  {"dev": "इ", "long": false},
+    "ý":  {"dev": "ई", "long": true},
+
+    "o":  {"dev": "ओ", "long": false},
+    "ó":  {"dev": "ओ", "long": true},
+
+    "u":  {"dev": "उ", "long": false},
+    "ú":  {"dev": "ऊ", "long": true},
+    "ů":  {"dev": "ऊ", "long": true}
   },
 
   "consonants": {

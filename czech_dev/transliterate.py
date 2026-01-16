@@ -1,11 +1,11 @@
-from .parser import parse
-from .base_map import map_base
-from .fronting import apply_fronting
+# czech_dev/transliterate.py
+
+from .preprocess import preprocess
 from .schwa import apply_schwa
+from .render import render
+
 
 def transliterate(text: str) -> str:
-    tokens = parse(text)
-    dev = map_base(tokens)
-    dev = apply_fronting(tokens, dev)
-    dev = apply_schwa(tokens, dev)
-    return "".join(dev)
+    latin, dev = preprocess(text)
+    dev = apply_schwa(latin, dev)
+    return render(dev, latin_tokens=latin)

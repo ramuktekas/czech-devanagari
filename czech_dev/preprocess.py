@@ -4,40 +4,37 @@ from .parser import parse
 from .base_map import BASE_MAP
 from .fronting import apply_fronting
 
-HALANT = "्"
-
 
 def preprocess(text: str):
     """
-    Parse Czech text and normalize it into a Devanagari stream
-    where:
-    - all consonants carry a halant by default
-    - fronting is applied to consonants (not vowels)
-    - no schwa logic is applied yet
+    Parse Czech text and convert it to a normalized Devanagari stream where:
+    - consonants get halant by default
+    - EXCEPT: consonant immediately before word-final 'a'
     """
 
-    # 1. Parse Latin text
     latin_tokens = parse(text)
-
-    # 2. Base-map Latin → Devanagari
     dev_tokens = []
+
+    # First pass: base-map everything (no halants yet)
     for tok in latin_tokens:
         if tok in BASE_MAP["consonants"]:
-            dev = BASE_MAP["consonants"][tok]["dev"]
-            dev_tokens.append(dev)
+            dev_tokens.append(BASE_MAP["consonants"][tok]["dev"])
         elif tok in BASE_MAP["vowels"]:
-            dev = BASE_MAP["vowels"][tok]["dev"]
-            dev_tokens.append(dev)
+            dev_tokens.append(BASE_MAP["vowels"][tok]["dev"])
         else:
-            # punctuation, spaces, etc.
             dev_tokens.append(tok)
 
-    # 3. Add halant to ALL consonants (default Czech state)
+    # Second pass: apply halant to consonants,
+    # except before word-final 'a'
     for i, tok in enumerate(latin_tokens):
         if tok in BASE_MAP["consonants"]:
-            dev_tokens[i] = dev_tokens[i] + HALANT
+            # Check if this consonant is immediately before word-final 'a'
+            is_before_final_a = (
+                i + 1 == len(latin_tokens) - 1
+                and latin_tokens[i + 1] == "a"
+            )
 
-    # 4. Apply fronting to consonants (triggered by vowels)
-    dev_tokens = apply_fronting(latin_tokens, dev_tokens, BASE_MAP)
+            if not is_before_final_a:
+                dev_tokens[i] = apply_fronting(dev_tokens[i])
 
     return latin_tokens, dev_tokens
